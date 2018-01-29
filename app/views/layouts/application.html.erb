@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Saasapp</title>
+    <title>The Periculum</title>
     <%= csrf_meta_tags %>
-    <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="main-nav-collapse" name="button">
+          <button type="button" class="navbar-toggle navbar-center" data-toggle="collapse" data-target="main-nav-collapse" name="button">
             <span class="sr-only">Toggle Navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
           <%= link_to '/', class: 'navbar-brand' do %>
-          <i class="fa fa-group"></i>
-          DevMatch
+          <img src="https://i.imgur.com/TtTQgbx.png" alt="minilogo" class="minilogo">
           <% end %>
         </div>
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Book Club', '/bookclub' %></li>
+            <li><%= link_to 'Musings', '/musings' %></li>
+            <li><%= link_to 'Podcasts', '/podcasts' %></li>
+            <li><%= link_to 'Resources', '/resources' %></li>
+            <li><%= link_to 'Courses', '/courses' %></li>
             <li><%= link_to 'About', '/about' %></li>
+
           </ul>
         </div>
       </div>
