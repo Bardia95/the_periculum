@@ -12,13 +12,13 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle navbar-center" data-toggle="collapse" data-target="main-nav-collapse" name="button">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="main-nav-collapse" aria-expanded="false">
             <span class="sr-only">Toggle Navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to '/', class: 'navbar-brand' do %>
+          <%= link_to root_path, class: 'navbar-brand' do %>
           <img src="https://i.imgur.com/TtTQgbx.png" alt="minilogo" class="minilogo">
           <% end %>
         </div>
@@ -29,7 +29,7 @@
             <li><%= link_to 'Podcasts', '/podcasts' %></li>
             <li><%= link_to 'Resources', '/resources' %></li>
             <li><%= link_to 'Courses', '/courses' %></li>
-            <li><%= link_to 'About', '/about' %></li>
+            <li><%= link_to 'About', about_path %></li>
 
           </ul>
         </div>
