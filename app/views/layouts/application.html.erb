@@ -30,11 +30,20 @@
             <li><%= link_to 'Resources', '/resources' %></li>
             <li><%= link_to 'Courses', '/courses' %></li>
             <li><%= link_to 'About', about_path %></li>
+            <li><%= link_to 'Contact Us', new_contact_path %></li>
+
 
           </ul>
         </div>
       </div>
     </nav>
+
+    <div class="container">
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{type} text-center" %>
+      <% end %>
+    </div>
+
     <%= yield %>
 
   </body>
