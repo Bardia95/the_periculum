@@ -1,0 +1,32 @@
+
+  <div class="container">
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-#{type} text-center" %>
+    <% end %>
+  </div>
+  <div id="navigationbar">
+    <div id="sticky-anchor"></div>
+    <div id="sticky" class="navlinks">
+      <% unless user_signed_in? %>
+        <%= link_to "Join Us", new_user_registration_path, class: "navlinks text-center loginsignup" %>
+        <span class="navlinks text-center loginsignup">|</span>
+        <%= link_to "Log In", new_user_session_path, class: "navlinks text-center loginsignup" %>
+      <% end %>
+      <br>
+      <br>
+      <p>
+      <span>
+      <%= link_to 'Book Club', '/bookclub', class: 'navlinks'%>
+      <%= link_to 'Essays', '/essays', class: 'navlinks'%>
+      <%= link_to 'Podcasts', '/podcasts', class: 'navlinks' %></span>
+      <%= link_to root_path, class: 'navlinks' do %>
+       <img src="https://i.imgur.com/TtTQgbx.png" alt="minilogo" class="minilogo">
+      <% end %>
+      <span>
+      <%= link_to 'Resources', '/resources', class: 'navlinks' %>
+      <%= link_to 'About', about_path, class: 'navlinks' %>
+      <%= link_to 'Contact Us', new_contact_path, class: 'navlinks' %></span>
+      </p>
+
+      </div>
+    </div>

@@ -21,11 +21,14 @@
 
 h1, h2, h3 {
   font-family: 'Cardo', serif;
+  text-align: center;
+}
 
+.signupform {
+  font-family: 'Cardo', serif;
 }
 
 body {
-  padding-top: 80px;
   background-color: #faf5ea;
 }
 
@@ -33,52 +36,64 @@ body {
   background: #0E4999;
 }
 
-.home-callout > h1 {
+.home-callout > .logos > h1 {
   color: #e2c077;
 }
 
+#sticky.stick {
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+  }
 
+
+#navigationbar {
+  font-family: 'Cardo', serif;
+  font-size: 20px;
+  text-align: center;
+  min-height: 7.5%;
+  background-color: #0E4999;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.navlinks {
+  color: #e2c077;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;
+  vertical-align: middle;
+  &:hover {
+    text-decoration: none;
+    color: #d3a039;
+  }
+}
+#sticky {
+  min-height: 7.5%;
+  background-color: #0E4999;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 2px;
+}
 
 .writing {
   max-width: 750px;
   padding: 50px;
+  text-align: justify;
 }
 
-.navbar {
-  border: none;
-  min-height: 65px;
-}
 
 .home-callout {
-  margin-top: -30px;
-  padding-top: 125px;
-  padding-bottom: 125px;
   color: white;
-}
-
-.navbar-default .navbar-brand,
-.navbar-default .navbar-nav > li > a
- {
-  color: #faf5ea;
-  font-size: 14px;
-  &:hover {
-    color: #e2c077;
-  }
-  }
-  .navbar-default .navbar-nav > li > a {
-    padding-top: 22px;
-  }
-
-.navbar-default .navbar-toggle {
-  border: 2px solid #faf5ea;
-  &:hover, &:focus {
-    background-color: #e2c077;
-  }
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #faf5ea;
-
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  min-height: 100%;
 }
 
   .mainlogo {
@@ -88,6 +103,16 @@ body {
 
   .minilogo {
     height: 40px;
-    width: auto;
-
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 5px;
   }
+
+  .alert-notice {
+  display: none;
+}
+
+
+.loginsignup {
+  padding-bottom: 10px;
+}

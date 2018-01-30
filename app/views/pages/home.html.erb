@@ -1,11 +1,9 @@
-<div class="home-callout text-center container-fluid">
-  <img src="https://i.imgur.com/TtTQgbx.png" alt="mainlogo" class="mainlogo">
-  <h1>The Periculum</h1>
-</div>
+<% if user_signed_in? == false%>
+  <%= render 'homeheader' %>
+<% end %>
+<%= render 'navheader' %>
 
-
-
-<div class="container">
+<div class="container writing">
 
 <h1>About</h1>
 
@@ -40,3 +38,4 @@ Small batch vaporware lomo tofu actually meggings bitters prism thundercats post
 <br>
 <br>
 </p>
+</div>
