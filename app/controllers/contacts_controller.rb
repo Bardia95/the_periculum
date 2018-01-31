@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
       ContactMailer.contact_email(name, email, body).deliver
       #Store success message in flash hash
       #and redirect to the 'new' action
-      flash[:success] = "Thanks! We'll get back to you soon!"
+      flash[:success] = "Thanks for the suggestion, hopefully we can implement it!"
       redirect_to new_contact_path
     else
       #If Contact object doesn't save, store error message in flash hash

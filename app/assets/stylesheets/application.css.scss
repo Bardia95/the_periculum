@@ -19,25 +19,27 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+$font: 'Cormorant Garamond', serif;
+$cream: #faf5ea;
+$blue: #0e4999;
+$gold: #e2c077;
+
+
 h1, h2, h3 {
-  font-family: 'Cardo', serif;
+  font-family: $font;
   text-align: center;
 }
 
 .signupform {
-  font-family: 'Cardo', serif;
-}
-
-body {
-  background-color: #faf5ea;
+  font-family: $font;
 }
 
 .navbar, .home-callout {
-  background: #0E4999;
+  background: $blue;
 }
 
 .home-callout > .logos > h1 {
-  color: #e2c077;
+  color: $gold;
 }
 
 #sticky.stick {
@@ -49,11 +51,11 @@ body {
 
 
 #navigationbar {
-  font-family: 'Cardo', serif;
+  font-family: $font;
   font-size: 20px;
   text-align: center;
   min-height: 7.5%;
-  background-color: #0E4999;
+  background-color: $blue;
 }
 
 #logo {
@@ -63,19 +65,20 @@ body {
 
 
 .navlinks {
-  color: #e2c077;
+  color: $cream;
   padding-right: 5px;
   padding-left: 5px;
   text-align: center;
   vertical-align: middle;
   &:hover {
     text-decoration: none;
-    color: #d3a039;
+    color: $gold;
+    font-size: 22px;
   }
 }
 #sticky {
   min-height: 7.5%;
-  background-color: #0E4999;
+  background-color: $blue;
   width: 100%;
   padding-top: 15px;
   padding-bottom: 2px;
@@ -115,4 +118,48 @@ body {
 
 .loginsignup {
   padding-bottom: 10px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
+.footer {
+    background-color: $blue;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-height: 7.5%;
+    width: 100%;
+    overflow:hidden;
+    text-align: center;
+}
+body {
+    background-color: $cream;
+}
+
+.footer .footertext {
+  font-family: $font;
+  font-size: 14px;
+  text-decoration: none;
+  color: $cream;
+  padding-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+  &:hover {
+    color: $gold;
+  }
+
+}
+
+.footer .footerlinks {
+  &:hover {
+    font-size: 16px;
+    color: $gold;
+ }
 }

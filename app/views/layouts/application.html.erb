@@ -3,7 +3,7 @@
 <head>
   <title>The Periculum</title>
   <%= csrf_meta_tags %>
-  <link href="//fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Cormorant+Garamond:400,700" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -11,6 +11,12 @@
 <body>
 
     <%= yield %>
-    <%= render 'pages/footer' %>
+
+    <div class="footer">
+      <p class="footertext text-center">The Periculum Erudition Corporation&copy; 2018</p><br>
+      <% if user_signed_in?%>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'footertext footerlinks'%>
+      <% end %>
+    </div>
   </body>
 </html>

@@ -2,23 +2,27 @@
 
 <div class="container">
   <div class="row">
-    <h3 class="text-center">Contact Us</h3>
+    <br><br>
+    <h3 class="text-center">Make a Suggestion</h3>
     <div class="col-md-4 col-md-offset-4">
-      <%= form_for @contact do |f| %>
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control'%>
+      <div class="text-center">
+              <%= form_for @contact do |f| %>
+        <div class="form-group signupform">
+          <br>
+          <%= f.label :name, class: 'signupform' %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Elon Musk'%>
         </div>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control'%>
+        <div class="form-group signupform">
+          <%= f.label :email, class: 'signupform' %>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'elonmusk@boringcompany.com'%>
         </div>
-        <div class="form-group">
-          <%= f.label :comments %>
-          <%= f.text_area :comments, class: 'form-control'%>
+        <div class="form-group signupform">
+          <%= f.label :comments, class: 'signupform' %>
+          <%= f.text_area :comments, class: 'form-control', placeholder: 'You should to sell hats & flamethrowers to fund your company'%>
         </div>
-          <%= f.submit 'Submit', class: 'btn btn-default' %>
+          <%= f.submit 'Submit', class: 'btn btn-default signupform' %>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
