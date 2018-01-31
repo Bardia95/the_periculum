@@ -32,3 +32,7 @@ $(function() {
     $(window).scroll(sticky_relocate);
     sticky_relocate();
 });
+
+$('.ckeditor').ckeditor({
+
+});
