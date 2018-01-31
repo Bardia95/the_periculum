@@ -1,0 +1,17 @@
+<%= render 'pages/navheader' %>
+
+
+<h1>
+<%= @essay.title %>
+</h1>
+
+<%=@essay.text %>
+
+<h2>Comments</h2>
+<%= render @essay.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_essay_path(@essay) %> |
+<%= link_to 'Back', essays_path %>

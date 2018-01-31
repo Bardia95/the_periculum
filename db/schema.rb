@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130180612) do
+ActiveRecord::Schema.define(version: 20180131223558) do
+
+  create_table "bookcomments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_bookcomments_on_section_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chapters", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "data_fingerprint"
+    t.string "type", limit: 30
+    t.integer "width"
+    t.integer "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "essay_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["essay_id"], name: "index_comments_on_essay_id"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -18,6 +63,29 @@ ActiveRecord::Schema.define(version: 20180130180612) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "essays", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "podcasts", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "podcomments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "podcast_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["podcast_id"], name: "index_podcomments_on_podcast_id"
   end
 
   create_table "users", force: :cascade do |t|

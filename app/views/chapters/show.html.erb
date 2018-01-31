@@ -1,0 +1,10 @@
+<%= render 'pages/navheader' %>
+
+<h1>
+  <%= @chapter.title %>
+</h1>
+
+<%=@chapter.text.html_safe %>
+
+<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+<%= link_to 'Back', chapters_path %>

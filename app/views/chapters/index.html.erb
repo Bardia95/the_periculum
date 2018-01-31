@@ -1,0 +1,24 @@
+<%= render 'pages/navheader' %>
+
+
+<h1>Chapters</h1>
+
+<%= link_to 'New chapter', new_chapter_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @chapters.each do |chapter| %>
+  <tr>
+    <td><%=chapter.title%></td>
+    <td><%=chapter.text.html_safe%></td>
+    <td><%=link_to 'Show',chapter_path(chapter)%></td>
+    <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
+    <td><%= link_to 'Destroy', chapter_path(chapter),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <%end%>

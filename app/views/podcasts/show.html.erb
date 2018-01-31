@@ -1,0 +1,9 @@
+<h1>
+  <strong>Title:</strong>
+  <%= @podcast.title %>
+</h1>
+
+  <%=@podcast.text.html_safe %>
+
+<%= link_to 'Edit', edit_podcast_path(@podcast) %> |
+<%= link_to 'Back', podcasts_path %>
