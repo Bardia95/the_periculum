@@ -3,20 +3,37 @@
 <% end %>
 <%= render 'navheader' %>
 
-<div class="container writing">
+<div class="homepage">
 
-<h1>Current Book</h1>
-  <%#= render 'books/1' %>
+<div class="container-fluid text-center writing">
 
-  <h1>Latest Podcast</h1>
-  <%#= render 'podcasts/1' %>
+    <h1>Per Book Club</h1>
+    <p>February's Book</p>
+    <p><%= link_to '48 Laws of Power', books_path, class: "navlinks"%></p>
+  </div>
+  <div class="container-fluid text-center writing">
 
-  <h1>Coming Soon</h1>
-    <h2>Courses</h2>
-      <p>Learn how to learn, read, and write. Cryptocurrency prizes.</p>
-    <h2>Essays</h2>
+    <h1>Per Talks Podcast</h1>
+    <p>Interviews with insightful humans.</p>
+    <p style="font-size:15px">Launching February 2</p>
+  </div>
+
+
+    <div class="container-fluid text-center writing">
+
+    <h1>Per Courses</h1>
+      <p>Learn & Earn</p>
+      <a href="//ethereum.org"></a><img src="https://i.imgur.com/VmUYJXq.png" alt="ethereum" id="ethlogo"/>
+      <p style="font-size:15px">Launching April 1</p>
+    </div>
+
+      <div class="container-fluid text-center writing">
+    <h1>Per Essays</h1>
       <p>My thoughts on whatever I find interesting.</p>
-    <h2>Resources</h2>
-      <p>My favorite books, podcasts, blogs, essays, MOOCs, and products.</p>
-=
+      <p style="font-size:15px">Launching February 10</p>
+      </div>
+      <div class="container-fluid text-center writing">
+    <h1>Per Resources</h1>
+      <p>My favorite books, podcasts, blogs, essays, courses, and products.</p>
+      <p style="font-size:15px">Launching February 10</p>
 </div>

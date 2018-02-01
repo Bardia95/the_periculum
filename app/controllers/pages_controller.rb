@@ -10,4 +10,9 @@ class PagesController < ApplicationController
 
   def podcast
   end
+
+  def showbook
+    @book = Book.Latest
+    @book.bookcover
+  end
 end

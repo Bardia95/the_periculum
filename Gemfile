@@ -40,6 +40,7 @@ gem 'font-awesome-sass', '~> 4.7.0'
 
 gem 'hirb', '~> 0.7.3'
 
+gem "paperclip", "~> 5.2.1"
 
 
 

@@ -20,12 +20,32 @@
   </p>
 
   <p>
+    <%= form.label :month %><br>
+    <%= form.text_field :month %>
+  </p>
+
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+  <p>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
   </p>
 
+<p>
+  <%= form.label :bookcover %><br>
+  <%= form.file_field :bookcover %>
+</p>
+
+<p>
+  <%= form.label :authorpic %><br>
+  <%= form.file_field :authorpic %>
+</p>
+
+
   <p>
-    <%= form.submit "New Book" %>
+    <%= form.submit "Submit" %>
   </p>
 
 <% end %>

@@ -3,7 +3,7 @@
 <head>
   <title>The Periculum</title>
   <%= csrf_meta_tags %>
-  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -13,10 +13,17 @@
     <%= yield %>
 
     <div class="footer">
-      <p class="footertext text-center">The Periculum Erudition Corporation&copy; 2018</p><br>
-      <% if user_signed_in?%>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'footertext footerlinks'%>
-      <% end %>
+      <%# if user_signed_in?%>
+        <%#= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'footertext footerlinks'%>
+      <%# end %>
+      <br><br><br>
+<a href="//twitter.com/thepericulum"><i class="fa fa-twitter" style="padding-right:5px"></i>
+</a>
+<a href="//facebook.com/thepericulum"><i class="fa fa-facebook" style="padding-right:5px"></i></a>
+<a href="//github.com/Bardia95"><i class="fa fa-github" style="padding-right:5px"></i></a>
+<br><br>
+<p class="footertext text-center">The Periculum Erudition Corporation&copy; 2018</p>
+
     </div>
   </body>
 </html>

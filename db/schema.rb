@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131223558) do
+ActiveRecord::Schema.define(version: 20180201010254) do
 
   create_table "bookcomments", force: :cascade do |t|
     t.string "commenter"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20180131223558) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bookcover_file_name"
+    t.string "bookcover_content_type"
+    t.integer "bookcover_file_size"
+    t.datetime "bookcover_updated_at"
+    t.string "authorpic_file_name"
+    t.string "authorpic_content_type"
+    t.integer "authorpic_file_size"
+    t.datetime "authorpic_updated_at"
+    t.string "author"
+    t.string "month"
   end
 
   create_table "chapters", force: :cascade do |t|
@@ -33,6 +43,8 @@ ActiveRecord::Schema.define(version: 20180131223558) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "book_id"
+    t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -86,6 +98,15 @@ ActiveRecord::Schema.define(version: 20180131223558) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["podcast_id"], name: "index_podcomments_on_podcast_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "chapter_id"
+    t.index ["chapter_id"], name: "index_sections_on_chapter_id"
   end
 
   create_table "users", force: :cascade do |t|

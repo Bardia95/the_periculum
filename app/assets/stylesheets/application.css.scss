@@ -19,8 +19,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-$font: 'Cormorant Garamond', serif;
-$cream: #faf5ea;
+
+
+
+$font: 'Playfair Display', serif;
+$cream: #F2E9E4;
 $blue: #0e4999;
 $gold: #e2c077;
 
@@ -28,6 +31,10 @@ $gold: #e2c077;
 h1, h2, h3 {
   font-family: $font;
   text-align: center;
+}
+
+p {
+  font-family: $font;
 }
 
 .signupform {
@@ -52,7 +59,8 @@ h1, h2, h3 {
 
 #navigationbar {
   font-family: $font;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
   min-height: 7.5%;
   background-color: $blue;
@@ -73,7 +81,6 @@ h1, h2, h3 {
   &:hover {
     text-decoration: none;
     color: $gold;
-    font-size: 22px;
   }
 }
 #sticky {
@@ -85,11 +92,22 @@ h1, h2, h3 {
 }
 
 .writing {
-  max-width: 750px;
+  max-width: 70%;
   padding: 50px;
   text-align: justify;
 }
 
+
+#48lawshome {
+max-height: 150px;
+max-width: auto;
+}
+
+
+#ethlogo {
+  width: 200px;
+  height: auto;
+}
 
 .home-callout {
   color: white;
@@ -134,21 +152,18 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    min-height: 7.5%;
+    min-height: 7%;
     width: 100%;
-    overflow:hidden;
     text-align: center;
 }
 body {
-    background-color: $cream;
-}
+  }
 
 .footer .footertext {
   font-family: $font;
   font-size: 14px;
   text-decoration: none;
   color: $cream;
-  padding-top: 10px;
   text-align: center;
   vertical-align: middle;
   &:hover {
@@ -162,4 +177,11 @@ body {
     font-size: 16px;
     color: $gold;
  }
+}
+
+.footer i {
+  color: $cream;
+  &:hover {
+    color: $gold;
+  }
 }
