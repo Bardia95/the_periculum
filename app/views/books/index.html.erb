@@ -1,24 +1,40 @@
-<%= render 'pages/navheader' %>
-
-
-
+<div class="homepage">
 
 <h1>Book Club</h1>
 
-<div class="text-center">
-
-<%= link_to 'New book', new_book_path %>
 
 
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+    <i class="material-icons"><%= link_to "add", new_book_path%></i>
+  </button>
 
-  <% @books.each do |book| %>
-    <%=book.month%>
-    <%= link_to book_path(book) do %>
-      <%= image_tag(book.bookcover.url(:medium))%>
-    <% end %>
-    <%= link_to 'Edit', edit_book_path(book) %>
-    <%= link_to 'Destroy', book_path(book),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-  <%end%>
+<div class="mdl-grid">
+<% @books.each do |book| %>
+  <div class="mdl-cell mdl-cell--4-col">
+    <div class="demo-card-event mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h4>
+          <%=book.title%>
+        </h4>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+          <%=link_to 'VIEW BOOK',book_path(book), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"%>
+        <div class="mdl-layout-spacer"></div>
+        <i class="material-icons">book</i>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<% @books.each do |book| %>
+
+<%= link_to 'Edit', edit_book_path(book) %> |
+<%= link_to 'Destroy', book_path(book),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br><br><br><br><br>
+
 </div>

@@ -4,24 +4,17 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   resources :contacts, only: :create
   get 'contact-us', to: 'contacts#new', as: 'new_contact'
-  get 'bookclub', to: 'pages#bookclub'
   get 'podcast', to: 'pages#podcast'
-  resources :essays do
+  resources :essays, shallow: true do
     resources :comments
   end
-  resources :podcasts do
-    resources :podcomments
+  resources :podcasts, shallow: true do
+    resources :comments
   end
 
-resources :books do
-  resources :chapters
-end
-
-    resources :chapters do
-      resources :sections
-    end
-  resources :sections do
-    resources :bookcomments
+  resources :books, shallow: true do
+    resources :comments
   end
+
 
 end

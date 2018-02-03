@@ -5,14 +5,7 @@ class PagesController < ApplicationController
   def about
   end
 
-  def bookclub
+  def resources
   end
 
-  def podcast
-  end
-
-  def showbook
-    @book = Book.Latest
-    @book.bookcover
-  end
 end

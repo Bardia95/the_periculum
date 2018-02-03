@@ -33,9 +33,7 @@ gem 'devise', '~> 4.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use Bootstrap library for front-end UI and layout
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-
+gem 'material_design_lite-sass', '~> 1.3', '>= 1.3.0.1'
 gem 'font-awesome-sass', '~> 4.7.0'
 
 gem 'hirb', '~> 0.7.3'

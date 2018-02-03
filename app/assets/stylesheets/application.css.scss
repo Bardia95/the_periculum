@@ -13,175 +13,110 @@
  *= require_tree .
  *= require_self
  */
-
-@import 'bootstrap-sprockets';
-@import "bootstrap";
+@import 'material';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 
+/* Coolors Exported Palette - coolors.co/2d232e-4a4e69-9a8c98-c9ada7-f2e9e4 */
+
+/* HSL */
+$purple: hsla(295%, 14%, 16%, 1);
+$blue: hsla(232%, 17%, 35%, 1);
+$grey: hsla(309%, 6%, 58%, 1);
+$pink: hsla(11%, 24%, 72%, 1);
+$cream: hsla(21%, 35%, 92%, 1);
+
+/* RGB */
+$purple: rgba(45, 35, 46, 1);
+$blue: rgba(74, 78, 105, 1);
+$grey: rgba(154, 140, 152, 1);
+$pink: rgba(201, 173, 167, 1);
+$cream: rgba(242, 233, 228, 1);
 
 
-$font: 'Playfair Display', serif;
-$cream: #F2E9E4;
-$blue: #0e4999;
-$gold: #e2c077;
 
 
-h1, h2, h3 {
-  font-family: $font;
+.demo-container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.demo-content {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
+}
+
+.demo-layout.is-small-screen .demo-content {
+  padding: 40px 28px;
+}
+
+.demo-content h3 {
+  margin-top: 48px;
+}
+
+.mdl-layout__content {
+  background-color: #FFFFF2;
+}
+
+.mdl-layout__header {
+  background-color: #2C363F !important;
+}
+
+.homepage {
   text-align: center;
 }
 
-p {
-  font-family: $font;
-}
-
-.signupform {
-  font-family: $font;
-}
-
-.navbar, .home-callout {
-  background: $blue;
-}
-
-.home-callout > .logos > h1 {
-  color: $gold;
-}
-
-#sticky.stick {
-    margin-top: 0 !important;
-    position: fixed;
-    top: 0;
-    z-index: 10000;
-  }
-
-
-#navigationbar {
-  font-family: $font;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
-  min-height: 7.5%;
-  background-color: $blue;
-}
-
-#logo {
-    display: block;
-    margin: 0 auto;
+footer {
+  background-color: #2C363F !important;
 }
 
 
-.navlinks {
-  color: $cream;
-  padding-right: 5px;
-  padding-left: 5px;
-  text-align: center;
-  vertical-align: middle;
-  &:hover {
-    text-decoration: none;
-    color: $gold;
-  }
+.demo-card-event.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: #08415C;
 }
-#sticky {
-  min-height: 7.5%;
-  background-color: $blue;
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 2px;
+.demo-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
 }
-
-.writing {
-  max-width: 70%;
-  padding: 50px;
-  text-align: justify;
+.demo-card-event > .mdl-card__title {
+  align-items: flex-start;
 }
-
-
-#48lawshome {
-max-height: 150px;
-max-width: auto;
+.demo-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.demo-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.demo-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions,
+.demo-card-event > .mdl-card__actions > .mdl-button {
+  color: #fff;
 }
 
-
-#ethlogo {
-  width: 200px;
-  height: auto;
+.mdl-layout-title {
+  max-width: 50px;
 }
 
-.home-callout {
-  color: white;
-  height: 100%;
-  padding-top: 100px;
-  padding-bottom: 50px;
-  min-height: 100%;
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
 }
-
-  .mainlogo {
-    height: 300px;
-    width: auto;
-  }
-
-  .minilogo {
-    height: 40px;
-    display: inline-block;
-    vertical-align: middle;
-    padding-bottom: 5px;
-  }
-
-  .alert-notice {
-  display: none;
-}
-
-
-.loginsignup {
-  padding-bottom: 10px;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin: 0 0 100px; /* bottom = footer height */
-}
-
-.footer {
-    background-color: $blue;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    min-height: 7%;
-    width: 100%;
-    text-align: center;
-}
-body {
-  }
-
-.footer .footertext {
-  font-family: $font;
-  font-size: 14px;
-  text-decoration: none;
-  color: $cream;
-  text-align: center;
-  vertical-align: middle;
-  &:hover {
-    color: $gold;
-  }
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  //background: bottom right 15% no-repeat #FF6F59;
 
 }
 
-.footer .footerlinks {
-  &:hover {
-    font-size: 16px;
-    color: $gold;
- }
-}
-
-.footer i {
-  color: $cream;
-  &:hover {
-    color: $gold;
-  }
+.homepage {
+  margin: 10px;
+  justify-content: center;
 }

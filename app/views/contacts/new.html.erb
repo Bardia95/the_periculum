@@ -1,28 +1,36 @@
-<%= render 'pages/navheader' %>
-
-<div class="container">
-  <div class="row">
-    <br><br>
-    <h3 class="text-center">Make a Suggestion</h3>
-    <div class="col-md-4 col-md-offset-4">
-      <div class="text-center">
-              <%= form_for @contact do |f| %>
-        <div class="form-group signupform">
-          <br>
-          <%= f.label :name, class: 'signupform' %>
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Elon Musk'%>
-        </div>
-        <div class="form-group signupform">
-          <%= f.label :email, class: 'signupform' %>
-          <%= f.text_field :email, class: 'form-control', placeholder: 'elonmusk@boringcompany.com'%>
-        </div>
-        <div class="form-group signupform">
-          <%= f.label :comments, class: 'signupform' %>
-          <%= f.text_area :comments, class: 'form-control', placeholder: 'You should to sell hats & flamethrowers to fund your company'%>
-        </div>
-          <%= f.submit 'Submit', class: 'btn btn-default signupform' %>
-      <% end %>
-    </div>
-    </div>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col"><h3>Make a Suggestion</h3>
   </div>
+  </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col"></div>
+      <div class="mdl-cell mdl-cell--4-col"><div class="mdl-textfield mdl-js-textfield">
+
+        <%= form_for @contact do |f| %>
+            <%#= f.label :name, class: 'mdl-textfield__label' %>
+            <p class="">Name</p>
+            <%= f.text_field :name, class: 'mdl-textfield__input', placeholder: 'Elon Musk'%>
+            <br>
+            <%#= f.label :email, class: 'mdl-textfield__label' %>
+            <p class="">Email</p>
+            <%= f.text_field :email, class: 'mdl-textfield__input', placeholder: 'elonmusk@boringcompany.com'%>
+            <br>
+            <%#= f.label :comments, class: 'mdl-textfield__label' %>
+            <p class="">Suggestions</p>
+            <%= f.text_area :comments, class: 'mdl-textfield__input', placeholder: 'You need to fund this by selling flamethrowers'%>
+            <br>
+            <br><br>
+            <%= f.submit 'Submit', class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' %>
+        <% end %>
+
+        <% if flash[:notice] %>
+          <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+          <span class="mdl-chip__text"><%= flash[:notice] %></span>
+          <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
+          </span>
+        <% end %>
+      </div>
+
+  </div>
+  <div class="mdl-cell mdl-cell--4-col"></div>
 </div>
