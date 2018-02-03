@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201205545) do
-
-  create_table "bookcomments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.integer "section_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["section_id"], name: "index_bookcomments_on_section_id"
-  end
+ActiveRecord::Schema.define(version: 20180203012913) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -36,15 +27,6 @@ ActiveRecord::Schema.define(version: 20180201205545) do
     t.datetime "authorpic_updated_at"
     t.string "author"
     t.string "month"
-  end
-
-  create_table "chapters", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "book_id"
-    t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -76,24 +58,6 @@ ActiveRecord::Schema.define(version: 20180201205545) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "podcomments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.integer "podcast_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["podcast_id"], name: "index_podcomments_on_podcast_id"
-  end
-
-  create_table "sections", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "chapter_id"
-    t.index ["chapter_id"], name: "index_sections_on_chapter_id"
   end
 
   create_table "users", force: :cascade do |t|
