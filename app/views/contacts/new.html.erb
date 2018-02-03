@@ -22,15 +22,13 @@
             <br><br>
             <%= f.submit 'Submit', class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' %>
         <% end %>
-
-        <% if flash[:notice] %>
-          <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
-          <span class="mdl-chip__text"><%= flash[:notice] %></span>
-          <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
-          </span>
-        <% end %>
       </div>
 
   </div>
-  <div class="mdl-cell mdl-cell--4-col"></div>
+  <div class="mdl-cell mdl-cell--4-col"><% if flash[:notice] %>
+    <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+    <span class="mdl-chip__text"><%= flash[:notice] %></span>
+    <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
+    </span>
+  <% end %></div>
 </div>
