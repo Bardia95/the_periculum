@@ -1,5 +1,9 @@
 class DropEssays < ActiveRecord::Migration[5.1]
-  def change
-    drop_table :essays
-  end
+  def up
+     drop_table :essays
+   end
+
+   def down
+     fail ActiveRecord::IrreversibleMigration
+   end
 end
