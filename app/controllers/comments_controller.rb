@@ -1,17 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
-    @essay = Essay.find(params[:essay_id])
-    @comment = @essay.comments.create(comment_params)
-    redirect_to essay_path(@essay)
+    @comment = @commentable.comments.new comment_params
+    @comment.user = current_user
+    @comment.save
+    redirect_to @commentable, notice: "Your comment was successfully posted."
   end
 
-  def destroy
-    @essay = Essay.find(params[:essay_id])
-    @comment = @essay.comments.find(params[:id])
-    @comment.destroy
-    redirect_to essay_path(@essay)
-  end
 
   private
     def comment_params

@@ -9,10 +9,10 @@
       <%=@essay.text %>
       <hr>
       <h2>Comments</h2>
-      <%= render @essay.comments %>
+      <%= render partial: "comments/comments", locals: {commentable: @essay} %>
       <hr>
       <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
+      <%= render partial: 'comments/form', locals: {commentable: @essay} %>
     </div>
   </div>
 </div>

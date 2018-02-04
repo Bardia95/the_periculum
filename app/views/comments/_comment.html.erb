@@ -1,12 +1,7 @@
-<p>
-  <strong>Commenter:</strong>
+<% commentable.comments.each do |comment| %>
   <%= comment.commenter %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
   <%= comment.body %>
-</p>
+<% end %>
 
 <p>
   <%= link_to 'Destroy Comment', [comment.article, comment],
