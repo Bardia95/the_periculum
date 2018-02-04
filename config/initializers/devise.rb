@@ -180,6 +180,10 @@ Devise.setup do |config|
   # Defines which key will be used when locking and unlocking an account
   # config.unlock_keys = [:email]
 
+
+  #config.assets.initialize_on_precompile = false
+
+
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)

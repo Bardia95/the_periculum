@@ -1,6 +1,6 @@
-class CreateSections < ActiveRecord::Migration[5.1]
+class CreateBooks < ActiveRecord::Migration[5.1]
   def change
-    create_table :sections do |t|
+    create_table :books do |t|
       t.string :title
       t.text :text
 
