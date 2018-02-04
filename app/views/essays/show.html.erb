@@ -1,18 +1,17 @@
-
 <div class="demo-main mdl-layout__content">
   <div class="demo-container mdl-grid">
     <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-      <%= link_to 'Back', essays_path, class: "demo-crumbs mdl-color-text--grey-500" %>
-      <%= link_to 'Edit', edit_essay_path, class: "demo-crumbs mdl-color-text--grey-500" %>
     <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
       <h3><%=@essay.title %></h3>
       <%=@essay.text %>
       <hr>
-      <h2>Comments</h2>
-      <%= render partial: "comments/comments", locals: {commentable: @essay} %>
+      <h6>Comments</h6>
+      <%= render partial: "comments/comment", locals: {commentable: @essay} %>
       <hr>
       <h2>Add a comment:</h2>
       <%= render partial: 'comments/form', locals: {commentable: @essay} %>
+      <%= link_to 'Back', essays_path, class: " " %>
+      <%= link_to 'Edit', edit_essay_path, class: " " %>
     </div>
   </div>
 </div>

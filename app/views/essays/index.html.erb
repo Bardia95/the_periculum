@@ -1,23 +1,22 @@
-
+<div class="homepage">
 
 <h1>Essays</h1>
 
 <%= link_to 'New essay', new_essay_path %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
 
   <% @essays.each do |essay| %>
-  <tr>
-    <td><%=essay.title%></td>
-    <td><%=essay.text.html_safe%></td>
-    <td><%=link_to 'Show',essay_path(essay)%></td>
-    <td><%= link_to 'Edit', edit_essay_path(essay) %></td>
-    <td><%= link_to 'Destroy', essay_path(essay),
+
+    <%=essay.title%>
+    <%=essay.text.html_safe%>
+    <%=link_to 'Show',essay_path(essay)%>
+    <%= link_to 'Edit', edit_essay_path(essay) %>
+    <%= link_to 'Destroy', essay_path(essay),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+              data: { confirm: 'Are you sure?' } %>
+
   <%end%>
+
+  <br><br><br><br><br>
+
+  </div>
