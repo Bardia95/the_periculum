@@ -8,4 +8,10 @@ class PagesController < ApplicationController
   def resources
   end
 
+  def privacy
+  end
+
+  def terms
+  end
+
 end

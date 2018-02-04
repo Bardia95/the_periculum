@@ -1,0 +1,15 @@
+<div class="mdl-grid homepage">
+
+<% @users.each do |user| %>
+  <% if user.profile %>
+<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" id="profilecard">
+    <h6><%= user.profile.first_name %> <%= user.profile.last_name %> </h6>
+    <p> <%= user.profile.contact_email %></p>
+  <div class="mdl-card__actions">
+    <%= link_to "View profile", user, class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect' %>
+  </div>
+</div>
+  <% end %>
+<% end %>
+
+</div>

@@ -2,9 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'about', to: 'pages#about'
+  get 'terms', to: 'pages#terms'
+  get 'privacy', to: 'pages#privacy'
+
   resources :contacts, only: :create
   resources :podcasts
   resources :books
+  resources :users do
+    resource :profile
+  end
   get 'contact-us', to: 'contacts#new', as: 'new_contact'
   get 'podcast', to: 'pages#podcast'
   resources :essays do
