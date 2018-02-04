@@ -23,7 +23,7 @@
     <!-- Navigation. We hide it in small screens. -->
     <nav class="mdl-navigation mdl-layout--large-screen-only">
       <%= link_to 'Book Club', books_path, class: 'mdl-navigation__link'%>
-      <%#= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
+      <%= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
       <%= link_to 'Per Talks', podcasts_path, class: 'mdl-navigation__link' %>
       <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
       <% if user_signed_in? %>

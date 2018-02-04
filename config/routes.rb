@@ -9,12 +9,5 @@ Rails.application.routes.draw do
     resources :comments, module: :essays
   end
   resources :podcasts
-    resources :comments
-  end
-
   resources :books
-    resources :comments
-  end
-
-
 end
