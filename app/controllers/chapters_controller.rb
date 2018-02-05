@@ -4,6 +4,10 @@ class ChaptersController < ApplicationController
     @questions = question.where(chapter_id: @chapter.id).order("created_at ASC")
   end
 
+  def index
+    @chapters = Chapter.all
+  end
+
   def new
     @chapter = Chapter.new
   end
@@ -13,12 +17,12 @@ class ChaptersController < ApplicationController
   end
 
   def create
-    @chapter =  Chapter.new(chapter_params)
+    @chapter = Chapter.new(chapter_params)
 
     if @chapter.save
-      redirect_to @chapter
+      render 'books/show'
     else
-      render 'new'
+      render 'books/show'
     end
   end
 
@@ -28,7 +32,7 @@ class ChaptersController < ApplicationController
     if @chapter.update(chapter_params)
       redirect_to @chapter
     else
-    render 'edit'
+      render 'edit'
   end
 end
 
