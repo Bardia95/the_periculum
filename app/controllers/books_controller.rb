@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
+    @chapters = Chapter.where(book_id: @book.id).order("created_at ASC")
   end
 
   def index
@@ -44,6 +45,6 @@ end
 
   private
     def book_params
-      params.require(:book).permit(:title,:text,:bookcover,:authorpic,:author)
+      params.require(:book).permit(:title,:text,:author)
     end
   end

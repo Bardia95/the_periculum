@@ -7,7 +7,15 @@ Rails.application.routes.draw do
 
   resources :contacts, only: :create
   resources :podcasts
-  resources :books
+  resources :books do
+    resources :chapters
+  end
+  resources :chapters do
+    resources :questions
+  end
+  resources :questions do
+    resources :comments, module: :questions
+  end
   resources :users do
     resource :profile
   end

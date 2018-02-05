@@ -3,7 +3,7 @@
 The Periculum is a learning platform.
 
 
-The logo and this entire website is licensed under Creative Commons Attribution 4.0 International License.
+The logo (original version by Sodacan) and this entire website is licensed under Creative Commons Attribution 4.0 International License. 
 "http://creativecommons.org/licenses/by/4.0/.
 
 You are free to:

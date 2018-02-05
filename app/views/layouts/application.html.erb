@@ -38,7 +38,9 @@
   </div>
 </header>
 <div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Periculum</span>
+  <span class="mdl-layout-title"><%= link_to root_path do %>
+    <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
+  <% end %> </span>
   <nav class="mdl-navigation">
     <%= link_to 'Book Club', books_path, class: 'mdl-navigation__link'%>
     <%#= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
@@ -64,7 +66,9 @@
 
     <footer class="mdl-mini-footer">
       <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">The Periculum</div>
+        <div class="mdl-logo"><%= link_to root_path do %>
+          <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
+        <% end %></div>
           <ul class="mdl-mini-footer__link-list">
             <li><%= link_to 'About', about_path%></li>
             <li><%= link_to 'Suggestions', new_contact_path%></li>
