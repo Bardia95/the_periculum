@@ -1,4 +1,4 @@
-<% if current_user.profile.first_name %>
+<% if current_user.profile.first_name && current_user.profile.last_name %>
 
   <%= form_for [commentable, Comment.new]  do |form| %>
     <div class="mdl-textfield mdl-js-textfield field">

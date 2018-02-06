@@ -1,5 +1,5 @@
 <% commentable.comments.each do |comment| %>
-  <p><strong><%= comment.user.profile.first_name %> - </strong><%= comment.body %></p>
+  <p><strong><%= comment.user.profile.first_name %><%= comment.user.profile.first_name %> - </strong><%= comment.body %></p>
   <%= link_to 'Destroy Comment', [comment.user, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
