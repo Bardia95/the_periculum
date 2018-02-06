@@ -3,10 +3,6 @@
 <h1>Book Club</h1>
 
 
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-    <i class="material-icons"><%= link_to "add", new_book_path%></i>
-  </button>
-
 <div class="mdl-grid">
 <% @books.each do |book| %>
   <div class="mdl-cell mdl-cell--4-col">
@@ -26,12 +22,15 @@
 <% end %>
 </div>
 
-<% @books.each do |book| %>
+<% if current_user && current_user.role == 'admin' %>
 
-<%= link_to 'Edit', edit_book_path(book) %> |
-<%= link_to 'Destroy', book_path(book),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
+  <% @books.each do |book| %>
+    <%= link_to 'Edit', edit_book_path(book) %> |
+    <%= link_to 'Destroy', book_path(book),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <%= link_to "New", new_book_path%>
 <% end %>
 
 <br><br><br><br><br>

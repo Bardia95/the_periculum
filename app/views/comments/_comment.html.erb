@@ -1,10 +1,10 @@
 <% commentable.comments.each do |comment| %>
-  <%= comment.user.first_name %>
-  <%= comment.body %>
-<% end %>
-
-<p>
-  <%#= link_to 'Destroy Comment', [comment.essay, comment],
+  <p><strong><%= comment.user.profile.first_name %> - </strong><%= comment.body %></p>
+  <%= link_to 'Destroy Comment', [comment.user, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+
+
 </p>

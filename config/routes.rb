@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   resources :contacts, only: :create
   resources :podcasts
   resources :books do
-    resources :chapters, shallow: true
+    resources :chapters, except: [:index]
   end
-  resources :chapters do
-    resources :questions, shallow: true
+  resources :chapters, except: [:index] do
+    resources :questions
   end
-  resources :questions do
-    resources :comments, module: :questions, shallow: true
+  resources :questions, except: [:index] do
+    resources :comments, module: :questions, except: [:index, :show, :edit]
   end
   resources :users do
     resource :profile

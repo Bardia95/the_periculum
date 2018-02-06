@@ -1,17 +1,56 @@
 <div class="homepage">
 
 
-<h3><%= @chapter.title %></h3>
-<h5><%= @chapter.text %></h5>
+
+<h3><%= @chapter.title %></h3><div class="mdl-layout-spacer"></div>
+<h5><%= @chapter.text %></h5><button id="demo-menu-lower-left"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+
+<% @book.chapters.each do |chapter| %>
+    <li class="mdl-menu__item"><%= link_to chapter.title, book_chapter_path(@book,chapter) %></li>
+<% end %>
+</ul>
+
+<div class="mdl-grid">
 
 
 
-<p>
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Destroy', book_path(@book),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', books_path %> |
-</p>
+<% @chapter.questions.each do |question| %>
+<% if current_user && current_user.role == 'admin' %>
+  <%= link_to 'Edit Question', edit_chapter_question_path(@chapter, question) %> |
+  <%= link_to 'Delete Question', chapter_question_path(@chapter, question),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %> |
+<% end %>
+<div class="mdl-cell--6-col">
+  <h6><strong><%= question.title %></strong></h6>
+  <%= question.text %>
+  <div class="mdl-card--border">
+    <%= render 'comments/comment', commentable: question%>
+  </div>
+  <div class="mdl-card--border">
+    <% if current_user %>
+      <%= render 'comments/form', commentable: question%>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
+
+
+<% if current_user && current_user.role == 'admin' %>
+  <%= render 'questions/form', question: @chapter.questions.new %>
+  <%= link_to 'Edit Chapter', edit_book_chapter_path(@book, @chapter) %> |
+  <%= link_to 'Destroy Chapter', book_chapter_path(@book, @chapter),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %> |
+<% end %>
+
 
 </div>
+
+</div>
+<%= link_to 'Back', books_path %>

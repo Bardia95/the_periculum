@@ -4,12 +4,19 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    @comment.save
-    redirect_to @commentable, notice: "Your comment was successfully posted."
+    if @comment.save
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def update
     @comment.update(comment_params)
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private

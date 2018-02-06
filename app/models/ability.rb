@@ -3,9 +3,9 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-      if user.has_role? :admin
+      if user.role == 'admin'
         can :manage, :all
-      elsif user.has_role? :author
+      elsif user.role == 'member'
         can :create, Comment
         can :update, Comment
         can :destroy, Comment

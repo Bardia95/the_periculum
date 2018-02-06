@@ -1,32 +1,33 @@
 class QuestionsController < ApplicationController
+  before_action :set_chapter
+
   def show
-    @question = Question.find(params[:id])
+    @question = @chapter.questions.find(params[:id])
   end
 
   def index
-    @questions = Question.all
+    @questions = @chapter.questions.all
   end
 
   def new
-    @question = Question.new
+    @question = @chapter.questions.new
   end
 
   def edit
-    @question = Question.find(params[:id])
+    @question = @chapter.questions.find(params[:id])
   end
 
   def create
-    @question =  Question.new(question_params)
-
+    @question =  @chapter.questions.new(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to book_chapter_path(@chapter.book, @chapter)
     else
       render 'new'
     end
   end
 
   def update
-    @question = Question.find(params[:id])
+    @question = @chapter.questions.find(params[:id])
 
     if @question.update(question_params)
       redirect_to @question
@@ -36,14 +37,20 @@ class QuestionsController < ApplicationController
 end
 
   def destroy
-    @question = Question.find(params[:id])
+    @question = @chapter.questions.find(params[:id])
     @question.destroy
 
-    redirect_to questions_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
     def question_params
       params.require(:question).permit(:title)
+    end
+    def set_chapter
+      @chapter = Chapter.find_by(id: params[:chapter_id])
+      if @chapter.nil?
+        redirect_to books_path
+      end
     end
   end

@@ -1,9 +1,16 @@
-<%= form_for [commentable, Comment.new]  do |form| %>
-  <p>
-    Comment<br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<% if current_user.profile.first_name %>
+
+  <%= form_for [commentable, Comment.new]  do |form| %>
+    <div class="mdl-textfield mdl-js-textfield field">
+      <%= form.text_area :body, class: 'mdl-textfield__input' %>
+    </div>
+    <div class="mdl-card__actions actions">
+      <%= form.submit 'Comment', class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' %>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <%= link_to "Please update profile", user_profile_path %>
+
 <% end %>
