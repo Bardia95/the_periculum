@@ -5,6 +5,11 @@ class ChaptersController < ApplicationController
     @questions = @chapter.questions.where(chapter_id: @chapter.id).order("created_at ASC")
   end
 
+  def index
+    @chapters = Chapter.where(book_id: @book.id).order("created_at ASC")
+  end
+
+
   def new
     @chapter = @book.chapters.new
   end

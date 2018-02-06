@@ -5,8 +5,9 @@ class QuestionsController < ApplicationController
     @question = @chapter.questions.find(params[:id])
   end
 
-  def index
-    @questions = @chapter.questions.all
+  def show
+    @chapter = @book.chapters.find(params[:id])
+    @questions = @chapter.questions.where(chapter_id: @chapter.id).order("created_at ASC")
   end
 
   def new
