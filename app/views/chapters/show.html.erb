@@ -3,16 +3,7 @@
 
 
 <h3><%= @chapter.title %></h3><div class="mdl-layout-spacer"></div>
-<h5><%= @chapter.text %></h5><button id="demo-menu-lower-left"
-        class="mdl-button mdl-js-button mdl-button--icon">
-  <i class="material-icons">more_vert</i>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-
-<% @book.chapters.each do |chapter| %>
-    <li class="mdl-menu__item"><%= link_to chapter.title, book_chapter_path(@book,chapter) %></li>
-<% end %>
-</ul>
+<h5><%= @chapter.text %></h5>
 
 <div class="mdl-grid">
 
