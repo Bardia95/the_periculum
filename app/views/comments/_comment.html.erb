@@ -1,11 +1,11 @@
 <% commentable.comments.each do |comment| %>
-  <h6 style="text-align:left"><strong><%= comment.user.profile.first_name %> <%= comment.user.profile.last_name %>: </strong></h6>
+  <h6 style="text-align:left; margin-bottom: 0px;"><strong><%= comment.user.profile.first_name %> <%= comment.user.profile.last_name %>: </strong></h6>
 <p style="text-align:left">
   <%= comment.body %>
 </p>
   <% if current_user %>
-    <%= link_to 'Destroy Comment', [comment.user, comment],
+    <p style="text-align:left; font-size: 12px; margin-top: -10px"><%= link_to 'Delete', [comment.user, comment],
                  method: :delete,
-                 data: { confirm: 'Are you sure?' } %>
+                 data: { confirm: 'Are you sure?' } %></p>
   <% end %>
 <% end %>
