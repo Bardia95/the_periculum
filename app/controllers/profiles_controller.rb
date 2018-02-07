@@ -14,8 +14,7 @@ class ProfilesController < ApplicationController
   # Create profile linked to this specific user
   @profile = @user.build_profile( profile_params )
   if @profile.save
-    flash[:notice] = "Profile updated!"
-    redirect_to user_path(params[:user_id])
+    redirect_back(fallback_location: root_path)
   else
     render action: :new
   end
