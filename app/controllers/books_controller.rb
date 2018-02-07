@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
-    @chapters = Chapter.where(book_id: @book.id).order("created_at ASC")
+    @chapters = Chapter.where(book_id: @book.id).order("updated_at ASC")
   end
 
   def index
