@@ -15,15 +15,7 @@
 
   <% @colors = ["purp", "purp1", "purp"] %>
        <% @i = 0 %>
-    <% if user_signed_in? %>
-       <% if current_user.profile %>
-       <% else %>
-         <li><%=link_to "Create profile to participate", new_user_profile_path(user_id: current_user.id) %></li>
-       <% end %>
-     <% else %>
-       <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
-       <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
-     <% end %>
+
   <% @chapters.each do |chapter| %>
       <div class="mdl-cell mdl-cell--4-col demo-card-square mdl-card mdl-shadow--2dp mdl-cell--2-col-phone">
         <div class="mdl-card__title mdl-card--expand <%= @colors[@i] %>">
