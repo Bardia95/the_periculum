@@ -22,9 +22,9 @@ class ChaptersController < ApplicationController
     @chapter = @book.chapters.new(chapter_params)
 
     if @chapter.save
-      render 'books/show'
+      render 'books/index'
     else
-      render 'books/show'
+      render 'books/index'
     end
   end
 
