@@ -29,10 +29,10 @@
       <%#= link_to 'Per Talks', podcasts_path, class: 'mdl-navigation__link' %>
       <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
       <% if user_signed_in? %>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
       <% else %>
-        <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
-        <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" %>
+        <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
+        <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
       <% end %>
     </nav>
   </div>
@@ -48,10 +48,10 @@
     <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
     <br>
     <% if user_signed_in? %>
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
     <% else %>
-      <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
-      <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" %>
+      <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
+      <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
     <% end %>
   </nav>
 </div>

@@ -22,7 +22,7 @@
           <%= chapter.text %>
         </div>
           <div class="mdl-card__actions mdl-card--border">
-            <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"%>
+            <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button "%>
         </div>
     </div>
     <% if @i == @colors.count - 1 %>
@@ -45,4 +45,4 @@
 </p>
 
 </div>
-<i class="material-icons"><%= link_to 'back', books_path, class: "mdl-button mdl-js-button mdl-button--mini-fab mdl-js-ripple-effect mdl-button--accent" %></i>
+<i class="material-icons"><%= link_to 'back', books_path, class: "mdl-button mdl-js-button mdl-button--mini-fab  mdl-button--accent" %></i>
