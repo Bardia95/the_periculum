@@ -28,6 +28,7 @@
           <%=link_to 'Create Profile', new_user_profile_path, class: "mdl-button mdl-button--colored mdl-js-button "%>
           <% else %>
           <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button "%>
+          <% end %>
         </div>
     </div>
     <% if @i == @colors.count - 1 %>
