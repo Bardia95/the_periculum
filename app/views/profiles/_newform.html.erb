@@ -8,11 +8,11 @@
         <%= form_for @profile, url: user_profile_path do |f| %>
           <div class="mdl-textfield mdl-js-textfield field">
             <p>First name</p>
-            <%= f.text_field :first_name, autofocus: true, class: 'mdl-textfield__input', placeholder: 'Elon' %>
+            <%= f.text_field :first_name, autofocus: true, class: 'mdl-textfield__input', placeholder: 'Elon', required: true %>
           </div>
           <div class="mdl-textfield mdl-js-textfield field">
             <p>Last name</p>
-            <%= f.text_field :last_name, autofocus: true, class: 'mdl-textfield__input', placeholder: 'Musk' %>
+            <%= f.text_field :last_name, autofocus: true, class: 'mdl-textfield__input', placeholder: 'Musk', required: true %>
           </div>
           <div class="mdl-textfield mdl-js-textfield field">
             <p>Contact Email</p>
