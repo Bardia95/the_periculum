@@ -64,40 +64,38 @@
     <%= yield %>
     </div>
 
-    <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo"><%= link_to root_path do %>
-          <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
-        <% end %></div>
-          <ul class="mdl-mini-footer__link-list">
-            <li><%= link_to 'About', about_path%></li>
-            <li><%= link_to 'Suggestions', new_contact_path%></li>
-            <li><%= link_to 'Privacy', privacy_path%></li>
-            <li><%= link_to 'Terms', terms_path%></li>
-          </ul>
-      </div>
-      <div class="mdl-mini-footer__right-section">
-        <ul class="mdl-mini-footer__link-list">
-          <% if user_signed_in? %>
-            <% if current_user.profile %>
-              <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
-            <% else %>
-              <li><%=link_to "Create profile", new_user_profile_path(user_id: current_user.id) %></li>
-            <% end %>
-            <li><%= link_to "Community", users_path %></li>
-          <% end %>
-          <li><a href="//twitter.com/thepericulum"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="//github.com/Bardia95/the_periculum"><i class="fa fa-github"></i></a></li>
-        </ul
-      </div>
-    </footer>
+
 
 
 
 
   </main>
 
-
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo">The Periculum 0.1.2</div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><%= link_to 'About', about_path%></li>
+          <li><%= link_to 'Suggestions', new_contact_path%></li>
+          <li><%= link_to 'Privacy', privacy_path%></li>
+          <li><%= link_to 'Terms', terms_path%></li>
+        </ul>
+    </div>
+    <div class="mdl-mini-footer__right-section">
+      <ul class="mdl-mini-footer__link-list">
+        <% if user_signed_in? %>
+          <% if current_user.profile %>
+            <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
+          <% else %>
+            <li><%=link_to "Create profile", new_user_profile_path(user_id: current_user.id) %></li>
+          <% end %>
+          <li><%= link_to "Community", users_path %></li>
+        <% end %>
+        <li><a href="//twitter.com/thepericulum"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="//github.com/Bardia95/the_periculum"><i class="fa fa-github"></i></a></li>
+      </ul
+    </div>
+  </footer>
 
 
   </div>

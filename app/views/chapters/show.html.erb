@@ -34,6 +34,8 @@
     <div class="mdl-card--border">
       <% if current_user %>
         <%= render 'comments/form', commentable: question%>
+      <% else %>
+        <i>Please sign up to add comments</i>
       <% end %>
     </div>
   </div>
