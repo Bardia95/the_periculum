@@ -8,7 +8,6 @@
     <div class="mdl-layout-spacer"></div>
   </div>
 
-  <%= link_to 'New chapter', new_book_chapter_path(@book, @chapter) %>
 
 <div class="mdl-grid homepage">
   <% @colors = ["purp", "purp1"] %>
@@ -23,7 +22,11 @@
           <%= chapter.text %>
         </div>
         <div class="mdl-card__actions mdl-card--border">
+          <% if current_user.profile %>
             <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button "%>
+          <% else %>
+            <li><%=link_to "Create profile", new_user_profile_path(user_id: current_user.id) %></li>
+          <% end %>
         </div>
     </div>
     <% if @i == @colors.count - 1 %>
@@ -41,6 +44,8 @@
     <%= link_to 'Destroy', book_path(@book),
           method: :delete,
           data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'New chapter', new_book_chapter_path(@book, @chapter) %>
+
   <% end %>
 
 </p>

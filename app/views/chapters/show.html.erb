@@ -35,7 +35,6 @@
       <% if current_user %>
         <%= render 'comments/form', commentable: question%>
       <% else %>
-      Comment:
       <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
       <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
       <% end %>
