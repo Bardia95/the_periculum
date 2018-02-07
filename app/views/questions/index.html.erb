@@ -1,11 +1,12 @@
-<i class="material-icons"><%= link_to 'back', book_chapters_path, class: "mdl-button mdl-js-button mdl-button--mini-fab mdl-js-ripple-effect mdl-button--accent" %></i>
 
 <div class="homepage">
 
-
-
-<h3><%= @chapter.title %></h3><div class="mdl-layout-spacer"></div>
-<h5><%= @chapter.text %></h5>
+  <div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col"><h3><%= @chapter.title %></h3>
+    <h5><%= @chapter.text %></h5></div>
+    <div class="mdl-layout-spacer"></div>
+  </div>
 
 <div class="mdl-grid homepage">
 
