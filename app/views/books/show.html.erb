@@ -15,6 +15,11 @@
 
   <% @colors = ["purp", "purp1", "purp"] %>
        <% @i = 0 %>
+
+       <% if current_user.profile %>
+       <% else %>
+         <li><%=link_to "Create profile to participate", new_user_profile_path(user_id: current_user.id) %></li>
+       <% end %>
   <% @chapters.each do |chapter| %>
       <div class="mdl-cell mdl-cell--4-col demo-card-square mdl-card mdl-shadow--2dp mdl-cell--2-col-phone">
         <div class="mdl-card__title mdl-card--expand <%= @colors[@i] %>">

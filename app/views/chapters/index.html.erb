@@ -13,6 +13,11 @@
 <div class="mdl-grid homepage">
   <% @colors = ["purp", "purp1"] %>
          <% @i = 0 %>
+
+     <% if current_user.profile %>
+     <% else %>
+       <li><%=link_to "Create profile to participate", new_user_profile_path(user_id: current_user.id) %></li>
+     <% end %>
 <% @chapters.each do |chapter| %>
     <div class="mdl-cell mdl-cell--4-col demo-card-square mdl-card mdl-shadow--2dp mdl-cell--2-col-phone">
       <div class="mdl-card__title mdl-card--expand <%= @colors[@i] %>">
@@ -22,11 +27,7 @@
           <%= chapter.text %>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <% if user_signed_in? && current_user.profile.first_name && current_user.profile.last_name %>
             <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button "%>
-          <% else %>
-            <%=link_to "Create profile", new_user_profile_path(user_id: current_user.id) %>
-          <% end %>
         </div>
     </div>
     <% if @i == @colors.count - 1 %>
