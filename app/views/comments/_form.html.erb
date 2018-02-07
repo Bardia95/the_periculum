@@ -2,7 +2,7 @@
 
   <%= form_for [commentable, Comment.new]  do |form| %>
     <div class="mdl-textfield mdl-js-textfield field">
-      <%= form.text_area :body, class: 'mdl-textfield__input' %>
+      <%= form.text_area :body, class: 'mdl-textfield__input', placeholder: 'Insert comment here' %>
     </div>
     <div class="mdl-card__actions actions">
       <%= form.submit 'Comment', class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' %>
