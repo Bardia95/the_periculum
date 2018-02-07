@@ -24,10 +24,12 @@
             <%= chapter.text %>
           </div>
           <div class="mdl-card__actions mdl-card--border">
-            <% if current_user.profile %>
-              <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button "%>
-            <% else %>
-            <%=link_to "Update Profile", new_user_profile_path(user_id: current_user.id), class: "mdl-button mdl-button--colored mdl-js-button "%>
+            <% if user_signed_in? %>
+              <% if current_user.profile %>
+                <%=link_to 'View Chapter', book_chapter_path(@book,chapter), class: "mdl-button mdl-button--colored mdl-js-button "%>
+              <% else %>
+                <%=link_to "Update Profile", new_user_profile_path(user_id: current_user.id), class: "mdl-button mdl-button--colored mdl-js-button "%>
+              <% end %>
             <% end %>
           </div>
       </div>
