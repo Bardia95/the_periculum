@@ -10,15 +10,15 @@ class ProfilesController < ApplicationController
 
   def create
   # Ensure that we have the user who is filling out form
-  @user = User.find( params[:user_id] )
+    @user = User.find( params[:user_id] )
   # Create profile linked to this specific user
-  @profile = @user.build_profile( profile_params )
-  if @profile.save
-    redirect_back(fallback_location: root_path)
-  else
-    render action: :new
+    @profile = @user.build_profile( profile_params )
+    if @profile.save
+      redirect_back(fallback_location: root_path)
+    else
+      render action: :new
+    end
   end
-end
 
 def edit
   @user = User.find( params[:user_id])
