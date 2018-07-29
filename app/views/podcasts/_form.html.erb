@@ -1,5 +1,4 @@
 <%= form_with model: @podcast, local: true do |form| %>
-
   <% if @podcast.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,19 +12,15 @@
       </ul>
     </div>
   <% end %>
-
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
-
   <p>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
   </p>
-
   <p>
     <%= form.submit "New Podcast" %>
   </p>
-
 <% end %>

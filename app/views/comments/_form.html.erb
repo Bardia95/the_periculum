@@ -1,24 +1,18 @@
 <% if current_user.profile.first_name && current_user.profile.last_name %>
-
   <%= form_for [commentable, Comment.new]  do |form| %>
   <div class="mdl-grid">
-
     <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield " style="justify-content:left; padding: 0px;">
       <%= form.text_area :body, class: 'mdl-textfield__input', placeholder: 'Insert comment here', style: 'justify-content:left; padding: 0px;' %>
     </div>
     <div class="mdl-layout-spacer"></div>
   </div>
   <div class="mdl-grid">
-
     <div class="mdl-cell mdl-cell--6-col mdl-card__actions actions " style="text-align:center">
       <%= form.submit 'Comment', class: 'mdl-button mdl-js-button mdl-button--raised ', style: 'text-align:center' %>
     </div>
     <div class="mdl-layout-spacer"></div>
   </div>
   <% end %>
-
 <% else %>
-
   <%= redirect_to user_profile_path %>
-
 <% end %>

@@ -1,16 +1,8 @@
 <div class="homepage">
-
-
-
-<h1>Podcasts</h1>
-
-
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-  <i class="material-icons"><%= link_to "add", new_podcast_path%></i>
-</button>
-
-
-
+  <h1>Podcasts</h1>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+    <i class="material-icons"><%= link_to "add", new_podcast_path%></i>
+  </button>
   <% @podcasts.each do |podcast| %>
     <%=podcast.title%>
     <%=podcast.text.html_safe%>
@@ -20,5 +12,4 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
   <%end%>
-
 </div>

@@ -1,0 +1,2 @@
+module MentalModelsHelper
+end

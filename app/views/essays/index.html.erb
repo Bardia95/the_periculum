@@ -1,12 +1,7 @@
 <div class="homepage">
-
 <h1>Essays</h1>
-
 <%= link_to 'New essay', new_essay_path %>
-
-
   <% @essays.each do |essay| %>
-
     <%=essay.title%>
     <%=essay.text.html_safe%>
     <%=link_to 'Show',essay_path(essay)%>
@@ -14,9 +9,6 @@
     <%= link_to 'Destroy', essay_path(essay),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
-
   <%end%>
-
   <br><br><br><br><br>
-
   </div>

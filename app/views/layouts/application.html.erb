@@ -1,113 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The Periculum</title>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:image" content="https://imgur.com/tKpU5dp.png" />
-  <meta property="og:description" content="Learning Platform" />
-  <meta name="google-site-verification" content="_UeWDyuN-7B6YNGYUlEApavHNQlAwJcRVHT3eKZ3iRg" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= favicon_link_tag 'favicon.ico' %>
-</head>
-
-<body>
-
-  <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-<header class="mdl-layout__header">
-  <div class="mdl-layout__header-row">
-    <!-- Title -->
-    <span>
-      <%= link_to root_path do %>
-        <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
-      <% end %> </span>   <!-- Add spacer, to align navigation to the right -->
-    <div class="mdl-layout-spacer"></div>
-    <!-- Navigation. We hide it in small screens. -->
-    <nav class="mdl-navigation mdl-layout--large-screen-only">
-      <%= link_to 'Book Club', books_path, class: 'mdl-navigation__link'%>
-      <%#= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
-      <%#= link_to 'Per Talks', podcasts_path, class: 'mdl-navigation__link' %>
-      <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
-      <% if user_signed_in? %>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
-      <% else %>
-        <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
-        <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
-      <% end %>
-    </nav>
-  </div>
-</header>
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title"><%= link_to root_path do %>
-    <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
-  <% end %> </span>
-  <nav class="mdl-navigation">
-    <%= link_to 'Book Club', books_path, class: 'mdl-navigation__link'%>
-    <%#= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
-    <%#= link_to 'Per Talks', podcasts_path, class: 'mdl-navigation__link' %>
-    <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
-    <br>
-    <% if user_signed_in? %>
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
-    <% else %>
-      <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
-      <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
-    <% end %>
-  </nav>
-</div>
-
-<main class="mdl-layout__content mdl-layout__container">
-  <div class="page-content"><!-- Your content goes here -->
-
-
-
-    <%= yield %>
+  <head>
+    <title>The Periculum</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://imgur.com/tKpU5dp.png" />
+    <meta property="og:description" content="Learning Platform" />
+    <meta name="google-site-verification" content="_UeWDyuN-7B6YNGYUlEApavHNQlAwJcRVHT3eKZ3iRg" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span>
+            <%= link_to root_path do %>
+              <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
+            <% end %>
+          </span>   <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <%= link_to 'Book Club', books_path, class: 'mdl-navigation__link'%>
+            <%#= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
+            <%#= link_to 'Per Talks', podcasts_path, class: 'mdl-navigation__link' %>
+            <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
+            <% if user_signed_in? %>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
+            <% else %>
+              <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
+              <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
+            <% end %>
+          </nav>
+        </div>
+      </header>
     </div>
-
-
-    <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">The Periculum 0.1.9</div>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">
+        <%= link_to root_path do %>
+          <%= image_tag "minilogo.png", class: "mdl-layout-title" %>
+        <% end %>
+      </span>
+      <nav class="mdl-navigation">
+        <%= link_to 'Book Club', books_path, class: 'mdl-navigation__link'%>
+        <%#= link_to 'Essays',  essays_path, class: 'mdl-navigation__link'%>
+        <%#= link_to 'Per Talks', podcasts_path, class: 'mdl-navigation__link' %>
+        <%#= link_to 'Resources', '/resources', class: 'mdl-navigation__link' %>
+        <br>
+        <% if user_signed_in? %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
+        <% else %>
+          <%= link_to "Join Us", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--accent" %>
+          <%= link_to "Log In", new_user_session_path, class: "mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" %>
+        <% end %>
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-layout__container">
+      <div class="page-content"><!-- Your content goes here -->
+        <%= yield %>
+      </div>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">The Periculum 0.1.9</div>
           <ul class="mdl-mini-footer__link-list">
             <li><%= link_to 'About', about_path%></li>
             <li><%= link_to 'Suggestions', new_contact_path%></li>
             <li><%= link_to 'Privacy', privacy_path%></li>
             <li><%= link_to 'Terms', terms_path%></li>
           </ul>
-      </div>
-      <div class="mdl-mini-footer__right-section">
-        <ul class="mdl-mini-footer__link-list">
-          <% if user_signed_in? %>
-            <% if current_user.profile %>
-              <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
-            <% else %>
-              <li><%=link_to "Create profile", new_user_profile_path(user_id: current_user.id) %></li>
+        </div>
+        <div class="mdl-mini-footer__right-section">
+          <ul class="mdl-mini-footer__link-list">
+            <% if user_signed_in? %>
+              <% if current_user.profile %>
+                <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
+              <% else %>
+                <li><%=link_to "Create profile", new_user_profile_path(user_id: current_user.id) %></li>
+              <% end %>
+              <li><%= link_to "Community", users_path %></li>
             <% end %>
-            <li><%= link_to "Community", users_path %></li>
-          <% end %>
-          <li><a href="//twitter.com/thepericulum"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="//github.com/Bardia95/the_periculum"><i class="fa fa-github"></i></a></li>
-          <li><a href="https://commerce.coinbase.com/checkout/635fb0d9-58bc-4c65-8931-a8b572b2ab44">
-  Donate with Crypto
-  </a>
-</div></li>
-        </ul
-      </div>
-    </footer>
-
-
-
-  </main>
-
-
-
-
-  </div>
-
-
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+            <li><a href="//twitter.com/thepericulum"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="//github.com/Bardia95/the_periculum"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://commerce.coinbase.com/checkout/635fb0d9-58bc-4c65-8931-a8b572b2ab44">Donate with Crypto</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </body>
 </html>
